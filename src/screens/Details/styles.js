@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import * as Progress from 'react-native-progress';
+
 export const GoBack = styled.TouchableOpacity`
     position: absolute;
     top: 20px;
@@ -35,7 +37,7 @@ export const CircleBackground = styled.View`
 `
 
 export const PokemonImage = styled.Image`
-    margin-top: 10px;
+    margin: 20px;
     width: 93px;
     height: 93px;
 `;
@@ -89,6 +91,59 @@ export const PokemonLore = styled.Text`
     color: #21386E;
 `
 
-export const PokemonPhysic = styled.View``
+export const PokemonPhysic = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 50px 30px;
+`;
 
-export const PokemonStats = styled.View``
+export const PokemonAppearance = styled.View`
+    align-items: center;
+`;
+
+export const PokemonAppearanceName = styled.Text`
+    color: #395BA7;
+    font-size: 12px;
+    margin-bottom: 5px;
+`;
+
+export const PokemonAppearanceBg = styled.View`
+    background-color: ${props => props.theme.colors.boxType[`${props.type}`]};
+    border-radius: 20px;
+`;
+
+export const PokemonAppearanceValue = styled.Text`
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 15px;
+    min-width: 75px;
+`;
+
+export const PokemonStats = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 8px 20px 0;
+`
+
+export const PokemonAttrWrapper = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+`;
+
+export const PokemonAttribute = styled.Text`
+    text-transform: capitalize;
+    color: #21386E;
+    font-size: 15px;
+    margin-top: 6px;
+`;
+
+export const PokemonAttributeValue = styled.Text`
+    margin-right: 10px;
+`;
+
+export const PokemonBarWrapper = styled.View``
+
+export const PokemonAttributeBar = styled(Progress.Bar)`
+    margin-top: 5px;
+`;

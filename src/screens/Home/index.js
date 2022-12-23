@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import api from '../../service/api';
+
 import { View, Text, FlatList } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
-
 
 import { Input } from '../../components/Input';
 import { MyTitle } from '../../components/MyTitle';
 import { Card } from '../../components/Card';
-import api from '../../service/api';
+import { useNavigation } from '@react-navigation/native';
 
 export function Home() {
 
     const [pokemons, setPokemons] = useState([]);
+    const {navigate} = useNavigation();
+
+    function handleNavigation(pokemonId) {
+        navigate('details', {
+            pokemonId,
+        })
+    }
 
     useEffect(() => {
         async function getPokemons() {
@@ -52,7 +60,9 @@ export function Home() {
                 data={pokemons}
                 keyExtractor={pokemon => pokemon.id.toString()}
                 renderItem={({item: pokemon}) => (
-                    <Card data={pokemon}/> 
+                    <Card data={pokemon} onPress={() => {
+                        handleNavigation(pokemon.id)
+                    }}/> 
                 )}
                 />
 

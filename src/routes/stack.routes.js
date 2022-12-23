@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const { Screen, Navigator } = createNativeStackNavigator();
 
 import { Home } from '../screens/Home';
-import { ScreenB } from '../screens/ScreenB';
+import { Details } from '../screens/Details';
 
 import { LogoImg } from '../components/LogoImg';
 
@@ -23,7 +23,7 @@ export function StackRoutes() {
             <Screen name='home' component={Home}
                     options={{ headerTitle: (props) => <LogoTitle {...props} /> }}
                     />
-            <Screen name='screenB' component={ScreenB}/>
+            <Screen name='details' component={Details}/>
         </Navigator>
     );
 }

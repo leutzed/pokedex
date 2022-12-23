@@ -10,7 +10,7 @@ export const Container = styled.View`
 
 export const CardComponent = styled.TouchableOpacity`
     margin-top: 20px;
-    background-color: #48D0B0;
+    background-color: ${props => props.theme.colors.backgroundCard[`${props.type}`]};
     height: 190px;
     border-radius: 15px;
     width: 100%;
@@ -70,7 +70,7 @@ export const PokemonDetails = styled.View`
     margin-top: 5px;
 `;
 export const PokemonTypeBox = styled.View`
-    background-color: #45C0A3;
+    background-color: ${props => props.theme.colors.boxType[`${props.type}`]};
     border-radius: 20px;
     padding: 3px 10px;
     margin: 0 2px;

@@ -8,6 +8,7 @@ import { Input } from '../../components/Input';
 import { MyTitle } from '../../components/MyTitle';
 import { Card } from '../../components/Card';
 import { useNavigation } from '@react-navigation/native';
+import { Header } from '../../components/Header';
 
 export function Home() {
 
@@ -53,6 +54,7 @@ export function Home() {
 
     return (
         <View style={{ flex: 1, backgroundColor: '#dddddd' }}>
+            <Header />
             <MyTitle />
             <Input />
             <FlatList 

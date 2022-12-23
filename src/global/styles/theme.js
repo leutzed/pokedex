@@ -1,6 +1,7 @@
 export default {
     colors: {
       background: '#fff',
+      header: '#21386E',
       text: '#050617',
   
       backgroundCard: {

@@ -18,7 +18,7 @@ function LogoTitle() {
 export function StackRoutes() {
     return (
         <Navigator screenOptions={{
-            headerStyle: { backgroundColor: '#21386E' },
+            headerShown: false,
         }}>
             <Screen name='home' component={Home}
                     options={{ headerTitle: (props) => <LogoTitle {...props} /> }}

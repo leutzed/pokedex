@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const GoBack = styled.TouchableOpacity`
+    position: absolute;
+    top: 20px;
+    left: 20px;
+`;
+
 export const Card = styled.View`
     background-color: #F3F3F3;
     flex: 1;
@@ -8,7 +14,7 @@ export const Card = styled.View`
 `;
 
 export const CardHeader = styled.View`
-    background-color: #48D0B0;
+    background-color: ${props => props.theme.colors.backgroundCard[`${props.type}`]};
     height: 120px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -22,11 +28,17 @@ export const LeftHeader = styled.View`
 export const CircleBackground = styled.View`
     height: 120px;
     width: 120px;
-    background-color: #71E5C9;
+    background-color: ${props => props.theme.colors.circleBackground[`${props.type}`]};
     border-radius: 100px;
     margin-top: 10px;
     margin-left: 25px;
 `
+
+export const PokemonImage = styled.Image`
+    margin-top: 10px;
+    width: 93px;
+    height: 93px;
+`;
 
 export const RightHeader = styled.View`
     width: 50%;
@@ -49,9 +61,25 @@ export const PokemonName = styled.Text`
     color: #fff;
     line-height: 26px;
     margin-top: 8px;
+    text-transform: capitalize;
 `
 
-export const PokemonTypes = styled.View``
+export const PokemonDetails = styled.View`
+    flex-direction: row;
+    margin-top: 5px;
+`;
+export const PokemonTypeBox = styled.View`
+    background-color: ${props => props.theme.colors.boxType[`${props.type}`]};
+    border-radius: 20px;
+    padding: 3px 10px;
+    margin: 0 2px;
+`;
+
+export const PokemonTypeName = styled.Text`
+    text-transform: capitalize;
+    color: #FFFFFF;
+
+`;
 
 export const PokemonLore = styled.Text`
     margin-top: 20px;

@@ -29,7 +29,7 @@ export default {
       },
 
       circleBackground: {
-        grass: '#9DFAE47A',
+        grass: '#71E5C9',
         fire: '#FFB8B8',
         water: '#A8D5FF',
         poison: '#A552CC',

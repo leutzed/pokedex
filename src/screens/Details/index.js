@@ -30,8 +30,11 @@ export function Details() {
                 const currentType = types[0].type.name;
                 const color = colors.backgroundCard[currentType];
 
+                
+                let statsSummed = stats.reduce((totalStats, current) => totalStats + current.base_stat, 0);
+
                 setPokemon({
-                    stats, abilities, id, name, types, height, weight, moves, color
+                    stats, abilities, id, name, types, height, weight, moves, statsSummed,  color
                 })
             } catch (err) {
                 Alert.alert('Something wrong happened!')
@@ -144,13 +147,15 @@ export function Details() {
                     <S.PokemonStats>
                         <S.PokemonAttribute>total</S.PokemonAttribute>
                         <S.PokemonAttrWrapper>
-                            <S.PokemonAttributeValue></S.PokemonAttributeValue>
+                            <S.PokemonAttributeValue>{pokemon.statsSummed}</S.PokemonAttributeValue>
                             <S.PokemonBarWrapper>
                                 <S.PokemonAttributeBar
                                     width={100}
                                     borderWidth={0}
                                     color={'#53E37E'} 
-                                    progress={100}
+                                    progress={pokemon.statsSummed / 600}
+                                    unfilledColor={'#B7B7B8'}
+
                                 ></S.PokemonAttributeBar>
                             </S.PokemonBarWrapper>
                         </S.PokemonAttrWrapper>

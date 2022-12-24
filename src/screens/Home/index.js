@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../service/api';
 
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, Alert } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 import { Input } from '../../components/Input';
@@ -13,12 +13,20 @@ import { Header } from '../../components/Header';
 export function Home() {
 
     const [pokemons, setPokemons] = useState([]);
+    const [pokemonsBkp, setPokemonsBkp] = useState([]);
+    const [search, setSearch] = useState('');
     const {navigate} = useNavigation();
 
     function handleNavigation(pokemonId) {
         navigate('details', {
             pokemonId,
         })
+    }
+    
+    function searchFilterText(text) {
+        let arr = JSON.parse(JSON.stringify(pokemonsBkp));
+
+        setPokemons(arr.filter((item) => (item.name).toUpperCase().includes(text.toUpperCase())))
     }
 
     useEffect(() => {
@@ -38,6 +46,7 @@ export function Home() {
                 })
             )
             setPokemons(payload);
+            setPokemonsBkp(payload);
         }
 
         getPokemons();
@@ -56,7 +65,10 @@ export function Home() {
         <View style={{ flex: 1, backgroundColor: '#dddddd' }}>
             <Header />
             <MyTitle />
-            <Input />
+            <Input 
+                placeholder="Search Pokémon"
+                onChangeText={(text) => searchFilterText(text)}
+            />
             <FlatList 
                 numColumns={'2'}
                 data={pokemons}

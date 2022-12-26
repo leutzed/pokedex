@@ -10,7 +10,7 @@ export function Card({ data, ...rest }) {
                     <S.IndexNumber>#{data.id}</S.IndexNumber>
                 </S.Top>
                 <S.Middle>
-                    <S.BackgroundCircle>
+                    <S.BackgroundCircle type={data.types[0].type.name}>
                         <S.PokemonImage
                             source={{
                                 uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`

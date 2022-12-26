@@ -62,7 +62,7 @@ export function Home() {
     }
 
     return (
-        <View style={{ flex: 1, backgroundColor: '#dddddd' }}>
+        <View style={{ flex: 1, backgroundColor: '#fff' }}>
             <Header />
             <MyTitle />
             <Input 

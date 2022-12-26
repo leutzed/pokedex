@@ -4,10 +4,10 @@ export const Container = styled.View`
     width: 90%;
     margin: 15px;
     padding: 0 16px;
-    background-color: #fff;
+    background-color: ${props => props.theme.colors.background};
     border-radius: 20px;
     height: 40px;
-    border: 1px solid #3663AD;
+    border: 1px solid ${props => props.theme.colors.border};
     flex-direction: row;
     align-items: center;
 `;

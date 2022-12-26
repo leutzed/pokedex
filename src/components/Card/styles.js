@@ -20,7 +20,7 @@ export const Top = styled.View`
     align-self: center;
     align-items: center;
     height: 18px;
-    background-color: #FFCB05;
+    background-color: ${props => props.theme.colors.pokemonId};
     border-radius: 10px;
     margin-top: -10px;
     width: 25%;
@@ -28,7 +28,7 @@ export const Top = styled.View`
 `;
 
 export const IndexNumber = styled.Text`
-    color: #21386E;
+    color: ${props => props.theme.colors.header};
 `;
 
 export const Middle = styled.View`
@@ -37,7 +37,7 @@ export const Middle = styled.View`
 `;
 
 export const BackgroundCircle = styled.View`
-    background-color: #9DFAE47A;
+    background-color: ${props => props.theme.colors.circleBackground[`${props.type}`]};
     height: 100px;
     width: 100px;
     margin-top: 14px;
@@ -58,7 +58,7 @@ export const Bottom = styled.View`
 `;
 
 export const PokemonName = styled.Text`
-    color: #FFFFFF;
+    color: ${props => props.theme.colors.background};
     line-height: 21px;
     font-size: 18px;
     font-weight: bold;
@@ -77,6 +77,6 @@ export const PokemonTypeBox = styled.View`
 `;
 export const PokemonTypeName = styled.Text`
     text-transform: capitalize;
-    color: #FFFFFF;
+    color: ${props => props.theme.colors.background};
 
 `;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const TitleText = styled.Text`
     font-size: 20px;
-    color: #21386E;
+    color: ${props => props.theme.colors.header};
     font-weight: bold;
     padding: 15px;
 `;

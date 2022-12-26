@@ -88,7 +88,7 @@ export const PokemonLore = styled.Text`
     text-align: center;
     font-size: 15px;
     padding: 0 15px;
-    color: #21386E;
+    color: ${props => props.theme.colors.header};
 `
 
 export const PokemonPhysic = styled.View`
@@ -114,7 +114,7 @@ export const PokemonAppearanceBg = styled.View`
 
 export const PokemonAppearanceValue = styled.Text`
     text-align: center;
-    color: #FFFFFF;
+    color: ${props => props.theme.colors.background};
     font-weight: bold;
     font-size: 15px;
     min-width: 75px;
@@ -133,7 +133,7 @@ export const PokemonAttrWrapper = styled.View`
 
 export const PokemonAttribute = styled.Text`
     text-transform: capitalize;
-    color: #21386E;
+    color: ${props => props.theme.colors.header};
     font-size: 15px;
     margin-top: 6px;
 `;

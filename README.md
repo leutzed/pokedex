@@ -2,9 +2,9 @@
 
 ## Comandos
 
-**`npm i`: Instalação das dependências do projeto
+`npm i`: Instalação das dependências do projeto
 
-**`expo start`: Inicialização do projeto
+`expo start`: Inicialização do projeto
 
 ### Author:
 
